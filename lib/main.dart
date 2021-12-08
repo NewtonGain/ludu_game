@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 
@@ -10,7 +9,8 @@ void main() {
         backgroundColor: Colors.red,
         appBar: AppBar(
           
-          title: Text('Ludu Game'),
+          title: Text('Ludu Game',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 28),),
+          centerTitle: true,
           backgroundColor: Colors.red,
         ),
         body: LuduGame(),
@@ -24,8 +24,8 @@ class LuduGame extends StatefulWidget {
   @override
   _LuduGameState createState() => _LuduGameState();
 }
-int luduChokkhaNumber =6;
-int luduChokkhaNumber1 =3;
+int luduChokkhaNumber =Random().nextInt(6)+1;
+int luduChokkhaNumber1 =Random().nextInt(6)+1;
 class _LuduGameState extends State<LuduGame> {
   @override
   Widget build(BuildContext context) {
