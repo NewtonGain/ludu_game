@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(
@@ -6,6 +9,7 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
+          
           title: Text('Ludu Game'),
           backgroundColor: Colors.red,
         ),
@@ -15,12 +19,17 @@ void main() {
   );
 }
 
-class LuduGame extends StatelessWidget {
-  // This widget is the root of your application.
+class LuduGame extends StatefulWidget {
+  
+  @override
+  _LuduGameState createState() => _LuduGameState();
+}
+int luduChokkhaNumber =6;
+int luduChokkhaNumber1 =3;
+class _LuduGameState extends State<LuduGame> {
   @override
   Widget build(BuildContext context) {
-    int luduChokkhaNumber =5;
-    int luduChokkhaNumber1 =6;
+    
     return Center(
       child: Row(
         children: [
@@ -29,16 +38,24 @@ class LuduGame extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               
-              child: TextButton(onPressed: (){},
-              child: Image.asset('images/chokkha-$luduChokkhaNumber.png')),
+              child: TextButton(onPressed: (){
+               setState(() {
+                 luduChokkhaNumber1 = Random().nextInt(6)+1;
+               });
+              },
+              child: Image.asset('images/chokkha-$luduChokkhaNumber1.png')),
             ),
           ),
          Expanded(
             flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: TextButton(onPressed: (){},
-              child: Image.asset('images/chokkha-$luduChokkhaNumber1.png')),
+              child: TextButton(onPressed: (){
+                setState(() {
+                  luduChokkhaNumber = Random().nextInt(6)+1;
+                });
+              },
+              child: Image.asset('images/chokkha-$luduChokkhaNumber.png')),
             ),
           ),
         ],
