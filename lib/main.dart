@@ -19,6 +19,30 @@ class LuduGame extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Container();
+    int luduChokkhaNumber =5;
+    int luduChokkhaNumber1 =6;
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              
+              child: TextButton(onPressed: (){},
+              child: Image.asset('images/chokkha-$luduChokkhaNumber.png')),
+            ),
+          ),
+         Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextButton(onPressed: (){},
+              child: Image.asset('images/chokkha-$luduChokkhaNumber1.png')),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
