@@ -20,13 +20,28 @@ void main() {
 }
 
 class LuduGame extends StatefulWidget {
+
   
   @override
   _LuduGameState createState() => _LuduGameState();
 }
 int luduChokkhaNumber =Random().nextInt(6)+1;
 int luduChokkhaNumber1 =Random().nextInt(6)+1;
+
 class _LuduGameState extends State<LuduGame> {
+
+
+  void ludupass(){
+    setState(() {
+      luduChokkhaNumber = Random().nextInt(6)+1;
+      
+    });
+  }
+  void ludupass2(){
+    setState(() {
+      luduChokkhaNumber1 = Random().nextInt(6)+1;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     
@@ -38,11 +53,7 @@ class _LuduGameState extends State<LuduGame> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               
-              child: TextButton(onPressed: (){
-               setState(() {
-                 luduChokkhaNumber1 = Random().nextInt(6)+1;
-               });
-              },
+              child: FlatButton(onPressed: ludupass2,
               child: Image.asset('images/chokkha-$luduChokkhaNumber1.png')),
             ),
           ),
@@ -50,11 +61,7 @@ class _LuduGameState extends State<LuduGame> {
             flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: TextButton(onPressed: (){
-                setState(() {
-                  luduChokkhaNumber = Random().nextInt(6)+1;
-                });
-              },
+              child: TextButton(onPressed: ludupass,
               child: Image.asset('images/chokkha-$luduChokkhaNumber.png')),
             ),
           ),
